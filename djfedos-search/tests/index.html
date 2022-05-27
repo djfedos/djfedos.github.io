@@ -8,11 +8,11 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Tests - My Docs</title>
+        <title>Tests - djfedos-search</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/color-brewer.min.css">
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">My Docs</a>
+                <a class="navbar-brand" href="..">djfedos-search</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -35,6 +35,9 @@
                         <ul class="nav navbar-nav">
                             <li class="navitem">
                                 <a href=".." class="nav-link">djfedos-search</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../benchmarks/" class="nav-link">Benchmarks</a>
                             </li>
                             <li class="navitem">
                                 <a href="../how_does_it_wrok/" class="nav-link">How does it wrok</a>
@@ -95,8 +98,6 @@
 
 <h2 id="tests">Tests</h2>
 <p>This library comes with two sets of tests. Use pytest to run them.</p>
-<p>They run automatically on every commit push to the
-<a href="https://github.com/djfedos/djfedos-search">GitHub repository</a>.</p>
 <ol>
 <li><code>test_lib_search_sdk.py</code> contains unit tests. This is the main set of tests.
 It ensures that the crucial functions work as expected.</li>
@@ -105,7 +106,9 @@ were discovered manually.</li>
 </ol>
 <p>Lists of tokens for tests are in the <code>tests</code> folder.</p>
 <p>There is also a test for FastAPI server in <code>test_fapi_server.py</code>.</p>
-<p>There is also a file called <code>test_lib_search_sdk_manual.py</code> that allows a pretty convenient
+<p>Those three tests run automatically on every commit push to the
+<a href="https://github.com/djfedos/djfedos-search">GitHub repository</a>.</p>
+<p>There is an additional tool called <code>test_lib_search_sdk_manual.py</code> that allows convenient
 manual testing.</p></div>
             </div>
         </div>
