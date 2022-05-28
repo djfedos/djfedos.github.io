@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#benchmarks" class="md-skip">
+        <a href="#test_benchmark_load_db" class="md-skip">
           Skip to content
         </a>
       
@@ -287,43 +287,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#benchmarks" class="md-nav__link">
-    Benchmarks
-  </a>
-  
-    <nav class="md-nav" aria-label="Benchmarks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#test_benchmark_load_db" class="md-nav__link">
     test_benchmark_load_db()
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test_benchmark_get_suggestions_limits" class="md-nav__link">
     test_benchmark_get_suggestions_limits()
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test_benchmark_get_suggestions_prefix" class="md-nav__link">
     test_benchmark_get_suggestions_prefix()
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test_plot_benchmarks" class="md-nav__link">
     test_plot_benchmarks()
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -362,43 +349,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#benchmarks" class="md-nav__link">
-    Benchmarks
-  </a>
-  
-    <nav class="md-nav" aria-label="Benchmarks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#test_benchmark_load_db" class="md-nav__link">
     test_benchmark_load_db()
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test_benchmark_get_suggestions_limits" class="md-nav__link">
     test_benchmark_get_suggestions_limits()
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test_benchmark_get_suggestions_prefix" class="md-nav__link">
     test_benchmark_get_suggestions_prefix()
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#test_plot_benchmarks" class="md-nav__link">
     test_plot_benchmarks()
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -418,62 +392,39 @@
 
   <h1>Benchmarks</h1>
 
-<h2 id="benchmarks">Benchmarks</h2>
-<p>To benchmark performance of the library in different scenarios, use <code>test_benchmarks.py</code>
-with <code>pytest</code> module. There are several functions for benchmarking that support semi-automated
-workflow.</p>
-<h3 id="test_benchmark_load_db">test_benchmark_load_db()</h3>
-<p>measures the performance of loading tokens to the database
-from the text file. It has the following parameters:</p>
+<p>To benchmark performance of the library in different scenarios, use test_benchmarks.py with pytest module. There are several functions for benchmarking that support semi-automated workflow.</p>
+<h2 id="test_benchmark_load_db">test_benchmark_load_db()</h2>
+<p>measures the performance of loading tokens to the database from the text file. It has the following parameters:</p>
 <ul>
-<li><code>num_lines:int</code>: number of lines (tokens) in a text file that's generated on every benchmark
-cycle.</li>
-<li><code>max_length:int</code>: length of a single token in characters. all the generated tokens have the same
-length, that is also a maximum length, in order to reproduce the worst case scenario.</li>
+<li><code>num_lines:int</code>: number of lines (tokens) in a text file that's generated on every benchmark cycle.</li>
+<li><code>max_length:int</code>: length of a single token in characters. all the generated tokens have the same length, that is also a maximum length, in order to reproduce the worst case scenario.</li>
 <li><code>cycles:int</code>: number of benchmark cycles to average out any fluctuations of its results.</li>
-<li><code>result_path:str</code>: path to the file with benchmark results. It's recommended to save results
-in .csv file.</li>
+<li><code>result_path:str</code>: path to the file with benchmark results. It's recommended to save results in .csv file.</li>
 </ul>
-<h3 id="test_benchmark_get_suggestions_limits">test_benchmark_get_suggestions_limits()</h3>
-<p>measures the performance of getting tokens from
-the database with a given limit on maximum amount of output tokens. The prefix is set to
-an empty string to maximize possible token output. It has the following parameters:</p>
+<h2 id="test_benchmark_get_suggestions_limits">test_benchmark_get_suggestions_limits()</h2>
+<p>measures the performance of getting tokens from the database with a given limit on maximum amount of output tokens. The prefix is set to an empty string to maximize possible token output. It has the following parameters:</p>
 <ul>
-<li><code>limit:int</code>: the main parameter of the test, it sets a maximum amount of tokens that
-the engine will output.</li>
-<li><code>num_lines:int</code>: number of lines (tokens) in a text file that's generated on every benchmark
-cycle.</li>
-<li><code>max_length:int</code>: length of a single token in characters. all the generated tokens have the same
-length, that is also a maximum length, in order to reproduce the worst case scenario.</li>
+<li><code>limit:int</code>: the main parameter of the test, it sets a maximum amount of tokens that the engine will output.</li>
+<li><code>num_lines:int</code>: number of lines (tokens) in a text file that's generated on every benchmark cycle.</li>
+<li><code>max_length:int</code>: length of a single token in characters. all the generated tokens have the same length, that is also a maximum length, in order to reproduce the worst case scenario.</li>
 <li><code>cycles:int</code>: number of benchmark cycles to average out any fluctuations of its results.</li>
-<li><code>result_path:str</code>: path to the file with benchmark results. It's recommended to save results
-in .csv file.</li>
-<li><code>prefix_length=0</code> in this case is used only to output the results into a .csv file.
-The prefix length in this test is hardcoded to be zero anyway, so it's recommended not to
-edit this parameter and leave it as it is.</li>
+<li><code>result_path:str</code>: path to the file with benchmark results. It's recommended to save results in .csv file.</li>
+<li><code>prefix_length=0</code> in this case is used only to output the results into a .csv file. The prefix length in this test is hardcoded to be zero anyway, so it's recommended not to edit this parameter and leave it as it is.</li>
 </ul>
-<h3 id="test_benchmark_get_suggestions_prefix">test_benchmark_get_suggestions_prefix()</h3>
-<p>this benchmark emulates a pretty unrealistic worst case scenario. It generates a token
-base with strings of a single character 'a'.
-Then it measures the time that it takes to fetch all the suitable tokens with prefixes
-consisting of the same character 'a'. It cycles through prefix length values from zero 
-to (<code>prefix_length</code> - 1). </p>
+<h2 id="test_benchmark_get_suggestions_prefix">test_benchmark_get_suggestions_prefix()</h2>
+<p>this benchmark emulates a pretty unrealistic worst case scenario. It generates a token base with strings of a single character 'a'. Then it measures the time that it takes to fetch all the suitable tokens with prefixes consisting of the same character 'a'. It cycles through prefix length values from zero to (prefix_length - 1).</p>
 <ul>
 <li><code>prefix_length:int</code>: maximum prefix length.</li>
-<li><code>num_lines:int</code>: number of lines (tokens) in a text file that's generated on every benchmark
-cycle.</li>
-<li><code>limit:int</code>: maximum amount of tokens that the engine will output. </li>
+<li><code>num_lines:int</code>: number of lines (tokens) in a text file that's generated on every benchmark cycle.</li>
+<li><code>limit:int</code>: maximum amount of tokens that the engine will output.</li>
 <li><code>cycles:int</code>: number of benchmark cycles to average out any fluctuations of its results.</li>
-<li><code>result_path:str</code>: path to the file with benchmark results. It's recommended to save results
-in .csv file.</li>
+<li><code>result_path:str</code>: path to the file with benchmark results. It's recommended to save results in .csv file.</li>
 </ul>
-<h3 id="test_plot_benchmarks">test_plot_benchmarks()</h3>
-<p>This method allows plotting benchmark results as a graph from the .csv file.
-It's useful when you make several benchmark runs with different parameters.</p>
+<h2 id="test_plot_benchmarks">test_plot_benchmarks()</h2>
+<p>This method allows plotting benchmark results as a graph from the .csv file. It's useful when you make several benchmark runs with different parameters.</p>
 <ul>
-<li><code>result_path:str</code>: path to th .csv file with benchmark results</li>
-<li><code>columns:List(str)</code>: columns with data to plot in ['x','y'] form, where 'x' is the name
-of horizontal axis data and 'y' is the name of vertical axis data.</li>
+<li>result_path:str: path to th .csv file with benchmark results</li>
+<li>columns:List(str): columns with data to plot in ['x','y'] form, where 'x' is the name of horizontal axis data and 'y' is the name of vertical axis data.</li>
 </ul>
 
               
